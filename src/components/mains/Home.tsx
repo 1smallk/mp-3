@@ -4,6 +4,7 @@ const NavMain = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
 `;
 
 const MainContainer = styled.main`
@@ -14,6 +15,16 @@ const MainContainer = styled.main`
     text-align: center;
     width: 70%;
     height: auto;
+    & * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 1000px){
+        width: 100%;
+        flex-direction: column;
+        min-height: 100vh;
+        height: auto;
+    }
 `;
 
 const H2 = styled.h2`
@@ -29,6 +40,9 @@ const ThisOne = styled.div`
     align-items: center;
     width: 100%;
     margin: 5% 0;
+    @media screen and (max-width: 1000px){
+        flex-direction: column;
+    }
 `;
 
 const P = styled.p`
@@ -43,6 +57,8 @@ const Img = styled.img`
 
 export default function Home() {
     return (
+        <>
+            <title>Home | Resume </title>
         <NavMain>
         <MainContainer>
             <H2>Home</H2>
@@ -53,14 +69,10 @@ export default function Home() {
                     </P>
             </ThisOne>
             <ThisOne>
-                Welcome to my website, here you will find my
-                <strong><em><u>Education</u></em></strong>
-                and my
-                <strong><em><u>Experiences</u></em></strong>
-                as well as other information that might be
-                of interest to you.
+                Welcome to my website, here you will find my Education and my Experiences as well as other information that might be of interest to you.
             </ThisOne>
         </MainContainer>
         </NavMain>
+        </>
     )
 }
